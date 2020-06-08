@@ -157,76 +157,197 @@
 			<!-- FORM -->
 						<div class="col-md-12 col-sm-12">
 
-							<h3 style="text-align: center; padding-top: 50px;"><strong>Rocket Elevators Quote Submission Form </strong> </h3>
-
-							
-							<!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> Your message successfully sent!
-							</div><!-- /Alert Success -->
-
-
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-
-
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
-
-
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
-								<fieldset>
+							<section class="page-header">
+								<div class="container">
+				
+									<h3 style="text-align: center; "><strong>Rocket Elevators Quote Submission Form </strong> </h3>
+				
 									
-											<div class="col-md-4">
-												<label for="contact_department">Départment</label>
-												<select class="form-control pointer" name="contact[department]">
-													<option value=""> Select </option>
-													<option value="Marketing">residential</option>
-													<option value="Webdesign">commercial</option>
-													<option value="Architecture">corporate</option>
-													<option value="Architecture">Hybrid</option>
+				
+								</div>
+							</section>
+
+							<form class="text-center" style="width: 500px; margin: auto;">
+								<fieldset>
+
+									<!-- QUESTION FORM SELECT TYPE OF BUILDING -->
+
+											<div >
+												<label for="building_type">What's your building's type?</label>
+												<select id="building_type"  class="form-control" onchange="mySelection();">
+													<option value="">--- Select ---</option>
+													<option value="residential">residential</option>
+													<option value="commercial">commercial</option>
+													<option value="corporate">corporate</option>
+													<option value="hybrid">Hybrid</option>
 												</select>
 											</div>
+									<!-- /QUESTION FORM SELECT TYPE OF PROJECT -->
+		
+											<br/><br/><br/>
+											<hr class="m-0" /><!-- 1px line separator -->
+
+									<!-- Residential Questions-->
+											<div id="residentialQ" style="display:block !important" >
+													<div>
+														<label for="residentialQ_1">How many appartments?</label>
+														<input class="form-control text-center" placeholder="0" id="residA"  type="number">
+													</div>
+								
+													<div>
+														<label for="residentialQ_2">How many floors?</label> 
+														<input  class="form-control text-center" placeholder="0" id="residB"  type="number">
+													</div>
+													
+													<div>
+														<label for="residentialQ_3">How many basements?</label> 
+														<input  class="form-control text-center" placeholder="0" id="residC"  type="number">
+													</div>
+											</div>
+									<!-- /Residential Questions-->
+
+
+								<!-- Commercial Questions-->				
+								<div id="commercialSec" style="display:none !important" >
+									<div class="text-center">		
+										<label for="commercialA_1">How many floors?</label>  
+										<input  class="form-control text-center" placeholder="0" id="commA"  type="number">
+									</div>
 									
-
-								</fieldset>
-
-								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> ENVOYER</button>
+									<div >	
+										<label for="commercialB_2">How many basements?</label> 
+										<input class="form-control text-center"  placeholder="0" id="commB"  type="number">
+									</div>
+				
+									<div >	
+										<label for="commercialC_3">Number of separate businesses?</label> 
+										<input class="form-control text-center" placeholder="0" id="commC"  type="number">
+									</div>
+				
+									<div >	
+										<label for="commercialD_4">Number of available parking spaces?</label> 
+										<input class="form-control text-center" placeholder="0" id="commD"  type="number" >
+									</div>
+				
+									<div >	
+										<label for="commercialE_5">Number of elevator cages?</label> 
+										<input class="form-control text-center" placeholder="0" id="commeE" type="number">	
 									</div>
 								</div>
+
+							<!-- /Commercial Questions-->		
+
+							<!-- Corporate Questions-->
+				
+					<div id="corporateSec" style="display: none !important">
+						<div>
+							<label for="corporateA">How many floors?</label>  
+							<input class="form-control text-center" placeholder="0" id="corporateA"   type="number" min="0">
+						</div>
+						
+						<div >
+							<label for="corporateB">How many basements?</label>  
+							<input class="form-control text-center" placeholder="0" id="corporateB" type="number"  min="0">
+						</div>
+						
+						<div >
+							<label for="corporateC">Number of available parking spaces?</label>  
+							<input class="form-control text-center" placeholder="0" id="corporateC"   type="number" min="0"> 
+						</div>
+						
+						<div>
+							<label for="corporateD">Number of separate tenant companies?</label>  
+							<input class="form-control text-center" placeholder="0" id="corporateD"   type="number" min="0">
+						</div>
+						
+						<div >
+							<label for="corporateE">Maximum amount of occupants per floor?</label>  
+							<input class="form-control text-center" placeholder="0" id="corporateE"  type="number"  min="0">		
+						</div>		
+					</div>
+				
+				<!-- /Corporate Questions-->
+
+					<!-- Hybrid Questions-->	
+				
+					<div id="hybridSec" style="display:none !important">
+							<div class=>
+							<label for="hybridA_1">How many floors?</label> 
+							<input class="form-control text-center" placeholder="0" id="hybridA" type="number" >
+						</div>
+						
+						<div >
+							<label for="hybridB_2">How many basements?</label> 
+							<input class="form-control text-center" placeholder="0" id="hybridB" type="number"><br>
+						</div>
+	
+						<div>
+							<label for="hybridC_3">Number of available parking spaces?</label> 
+							<input class="form-control text-center" placeholder="0" id="hybridC"   type="number"> 
+						</div>
+						
+						<div >
+							<label for="hybridD_4">Number of distinct businesses?</label>
+							<input class="form-control text-center" placeholder="0" id="hybridD"  type="number">
+						</div>
+						
+						<div >
+							<label for="hybridE_5">Maximum amount of occupants per floor?</label> 
+							<input class="form-control text-center" placeholder="0" id="hybridE"   type="number"> 
+						</div>
+						
+						<div >
+							<label for="hybridF_6">Active/busy hours?</label> 
+							<input class="form-control text-center" placeholder="0" id="hybridE" type="number" >		
+						</div>
+						
+					</div>
+				
+				
+				<!-- /Hybrid Questions-->	
+
+					<!-- Recommended numbers of elevators-->
+					<div >
+						<label for="elevatorsNb">Recommended number of elevators</label> 
+						<input class="form-control text-center" placeholder="0" id="elevatorsNb" value="" type="number" >
+					</div>
+			<!-- /Recommended numbers of elevators-->
+			<br/><br/>
+			<hr class="m-0" /><!-- 1px line separator -->
+			<br/>
+			<!-- Quality Selection -->
+			<form>
+				<label>Choose your service product</label>
+				<div class="container">
+					<label for="standard">Standard</label>
+					   <input type="radio" id="standard" name="quality" value="standard" onchange="qlyStandard()">
+						</option><br>
+					<label for="premium">Premium</label>
+					   <input type="radio" id="premium" name="quality" value="premium" onchange="qlyPremium()">
+						</option><br>
+					<label for="excelium">Excelium</label>
+					   <input type="radio" id="excelium" name="quality" value="excelium" onchange="qlyExcelium()">
+						</option><br><br>
+				</div>
+				</form>
+				<!-- Quality Selection -->
+				<br/><br/>
+				<hr class="m-0" /><!-- 1px line separator -->
+				<br/>
+			<!-- Estimated Prices-->
+			<form>
+				<div form-group mx-sm-3 mb-2 >
+					Estimated Cost Per Elevator: <input class="form-control text-center" id="elevatorCost" placeholder="$0.00" type="text" disabled><br>
+
+					Estimated Installation Costs: <input class="form-control text-center" id="installationCost" placeholder="$0.00" type="text" disabled><br>
+
+					Estimated Total Cost: <input class="form-control text-center" id="totalCost" placeholder="$0.00" type="text" disabled><br>
+				</div>
+				<!-- /Estimated Prices-->
+			</Form>
+								</fieldset>
+
+								
 							</form>
 
 						</div>
