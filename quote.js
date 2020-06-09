@@ -1,12 +1,6 @@
 /**	QUOTE FORM
 *************************************************** **/
 
-/** function mySelection() {
-    var x = document.getElementById("building_type");
-    var i = x.selectedIndex;						  
-    return i;
- 
-}**/   
 function mySelection()	 {	
         
         var buildingType = document.getElementById("building_type").value
@@ -63,7 +57,7 @@ function mySelection()	 {
         
 }
 
-function returnQuantity_residential() {
+ function Quantity_residential() {
     //Number of appart
            var nbAppart = document.getElementById("residA").value || 0 ;
     //Number of level
@@ -81,7 +75,7 @@ function returnQuantity_residential() {
     
         var elevatorsEstimate = (OccurAppartLevel) * (columns);
     	
-        if (nbAppart != 0  && nbLevel != 1  && nbBasement  != "" ){
+        if(elevatorsEstimate > 0){
            document.getElementById("elevatorsNb").value= elevatorsEstimate;
     }else {
            document.getElementById("elevatorsNb").value = 0;
@@ -89,7 +83,7 @@ function returnQuantity_residential() {
         return elevatorsEstimate;
 }
 
-function returnQuantity_commercial() {
+function Quantity_commercial() {
     //Number of level
         var nbLevel = document.getElementById("commA").value || 0 ;
     //Number of Basement      
@@ -188,8 +182,14 @@ function Price() {
         document.getElementById("installationCost").value = install_Rate ;
         document.getElementById("totalCost").value = Total;
         }								
-    }
+    } 
            
-        
+  
+
+
+
+
+
+      
     
  
