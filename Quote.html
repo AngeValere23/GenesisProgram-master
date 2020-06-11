@@ -97,7 +97,7 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
+						<a class="logo float-left scrollTo" href="index.html">
 							<img src="assets/images/RocketElevatorAssets/R2.png" alt="" />
 						</a>
 
@@ -108,33 +108,35 @@
 								
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class="active"><!-- HOME -->
-										<a href="#top">
+										<a href="index.html">
 											<strong>HOME</strong>
 										</a>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="#services">											
-											<strong>SERVICES</strong>
-										</a>
+										<a href="#" class="dropdown-toggle no-text-underline" data-toggle="dropdown">SERVICES</a>
+										<ul class="dropdown-menu">
+											<li><a href="residential.html">RESIDENTIAL</a></li>
+											<li><a href="corporate.html">CORPORATE</a></li>
+										</ul>
 									</li>
 									<li><!-- WORK -->
-										<a href="#portfolio">											
+										<a href="index.html">											
 											<strong>PORTFOLIO</strong>
 										</a>
 									</li>
 									<li><!-- NEWS -->
-										<a href="#news">											
+										<a href="index.html">											
 											<strong>NOUVELLES</strong>
 										</a>
 									</li>									
 									<li><!-- CLIENTS -->
-										<a href="#clients">											
+										<a href="index.html">											
 											<strong>CLIENTS</strong>
 										</a>
 									</li>																
 									<li><!-- CONTACT -->
 										
-											<a href="#contact">
+											<a href="index.html">
 												<strong>CONTACT</strong>
 											</a>
 										
@@ -166,151 +168,108 @@
 				
 								</div>
 							</section>
-
-							<form class="text-center" style="width: 500px; margin: auto;">
-								<fieldset>
+    <form class="text-center" style="width: 500px; margin: auto;">
+			
 
 									<!-- QUESTION FORM SELECT TYPE OF BUILDING -->
 
 											<div >
 												<label for="building_type">What's your building's type?</label>
-												<select id="building_type"  class="form-control" onchange="mySelection();">
-													<option value="">--- Select ---</option>
-													<option value="residential">residential</option>
-													<option value="commercial">commercial</option>
-													<option value="corporate">corporate</option>
-													<option value="hybrid">Hybrid</option>
+												<select   class="form-control" id="dropMenu" onchange="divStatus()">
+													<option >--- Select ---</option>
+													<option >residential</option>
+													<option >commercial</option>
+													<option >corporate</option>
+													<option >Hybrid</option>
 												</select>
 											</div>
 									<!-- /QUESTION FORM SELECT TYPE OF PROJECT -->
-		
+									
+									<!-- Residential Questions-->
+								
 											<br/><br/><br/>
 											<hr class="m-0" /><!-- 1px line separator -->
 
-									<!-- Residential Questions-->
-											<div id="residentialQ" style="display:block !important" >
-													<div>
-														<label for="residentialQ_1">How many appartments?</label>
-														<input class="form-control text-center" placeholder="0" id="residA"  type="number">
-													</div>
-								
-													<div>
-														<label for="residentialQ_2">How many floors?</label> 
-														<input  class="form-control text-center" placeholder="0" id="residB"  type="number">
-													</div>
-													
-													<div>
-														<label for="residentialQ_3">How many basements?</label> 
-														<input  class="form-control text-center" placeholder="0" id="residC"  type="number">
-													</div>
+									
+											<div id="DIV_1" style="display: none;">
+												<label for="appartements">What is the number of appartement?</label> 					
+												<input class="form-control text-center" id="qty_Appart" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">   
 											</div>
+										   
+								
+											<div id="DIV_2" style="display: none;">
+												<label for="floors">How many floors?</label> 
+												<input class="form-control text-center" id="qty_Level" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">
+											</div>
+													
+											<div id="DIV_3" style="display: none;">
+												<label for="basements">How many basements?</label> 
+												<input class="form-control text-center" id="qty_Base" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  
+											</div>
+									
 									<!-- /Residential Questions-->
 
 
 								<!-- Commercial Questions-->				
-								<div id="commercialSec" style="display:none !important" >
-									<div class="text-center">		
-										<label for="commercialA_1">How many floors?</label>  
-										<input  class="form-control text-center" placeholder="0" id="commA"  type="number">
-									</div>
+								
 									
-									<div >	
-										<label for="commercialB_2">How many basements?</label> 
-										<input class="form-control text-center"  placeholder="0" id="commB"  type="number">
+									<div id="DIV_4" style="display: none;">	
+										<label for="commercialBusiness">How many different business are hosted in your bulding?</label> 
+										<input class="form-control text-center" id="qty_Business" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  
 									</div>
 				
-									<div >	
-										<label for="commercialC_3">Number of separate businesses?</label> 
-										<input class="form-control text-center" placeholder="0" id="commC"  type="number">
+									<div id="DIV_5" style="display: none;">	
+										<label for="commercialParking">Number of available parking spaces?</label> 
+										<input class="form-control text-center" id="qty_Parking" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  
 									</div>
 				
-									<div >	
-										<label for="commercialD_4">Number of available parking spaces?</label> 
-										<input class="form-control text-center" placeholder="0" id="commD"  type="number" >
+									<div id="DIV_6" style="display: none;">	
+										<label for="commercialElevatordCages">Number of elevator cages?</label> 
+										<input class="form-control text-center" id="qty_Eleva" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  	
 									</div>
-				
-									<div >	
-										<label for="commercialE_5">Number of elevator cages?</label> 
-										<input class="form-control text-center" placeholder="0" id="commeE" type="number">	
-									</div>
-								</div>
+								
 
 							<!-- /Commercial Questions-->		
 
-							<!-- Corporate Questions-->
+							<!-- Corporate Questions--> <!-- Hybrid Questions-->	
 				
-					<div id="corporateSec" style="display: none !important">
-						<div>
-							<label for="corporateA">How many floors?</label>  
-							<input class="form-control text-center" placeholder="0" id="corporateA"   type="number" min="0">
+					
+						
+						<div id="DIV_7" style="display: none;">
+							<label for="corpCompanies">Number of separate tenant companies?</label>  
+							<input class="form-control text-center" id="qty_loan" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()"> 
 						</div>
 						
-						<div >
-							<label for="corporateB">How many basements?</label>  
-							<input class="form-control text-center" placeholder="0" id="corporateB" type="number"  min="0">
+						<div id="DIV_8" style="display: none;">
+							<label for="corpOccupants">Maximum amount of occupants per floor?</label>  
+							<input class="form-control text-center" id="qty_Pop" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()"> 	
 						</div>
 						
-						<div >
-							<label for="corporateC">Number of available parking spaces?</label>  
-							<input class="form-control text-center" placeholder="0" id="corporateC"   type="number" min="0"> 
+						<div  id="DIV_9" style="display: none;">
+							<label for="hybrid">Active/busy hours?</label> 
+							<input class="form-control text-center" id="qty_Hours" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">   		
 						</div>
-						
-						<div>
-							<label for="corporateD">Number of separate tenant companies?</label>  
-							<input class="form-control text-center" placeholder="0" id="corporateD"   type="number" min="0">
-						</div>
-						
-						<div >
-							<label for="corporateE">Maximum amount of occupants per floor?</label>  
-							<input class="form-control text-center" placeholder="0" id="corporateE"  type="number"  min="0">		
-						</div>		
-					</div>
-				
-				<!-- /Corporate Questions-->
 
-					<!-- Hybrid Questions-->	
 				
-					<div id="hybridSec" style="display:none !important">
-							<div class=>
-							<label for="hybridA_1">How many floors?</label> 
-							<input class="form-control text-center" placeholder="0" id="hybridA" type="number" >
-						</div>
-						
-						<div >
-							<label for="hybridB_2">How many basements?</label> 
-							<input class="form-control text-center" placeholder="0" id="hybridB" type="number"><br>
-						</div>
-	
-						<div>
-							<label for="hybridC_3">Number of available parking spaces?</label> 
-							<input class="form-control text-center" placeholder="0" id="hybridC"   type="number"> 
-						</div>
-						
-						<div >
-							<label for="hybridD_4">Number of distinct businesses?</label>
-							<input class="form-control text-center" placeholder="0" id="hybridD"  type="number">
-						</div>
-						
-						<div >
-							<label for="hybridE_5">Maximum amount of occupants per floor?</label> 
-							<input class="form-control text-center" placeholder="0" id="hybridE"   type="number"> 
-						</div>
-						
-						<div >
-							<label for="hybridF_6">Active/busy hours?</label> 
-							<input class="form-control text-center" placeholder="0" id="hybridE" type="number" >		
-						</div>
-						
-					</div>
-				
-				
-				<!-- /Hybrid Questions-->	
+				<!-- /Corporate Questions--> <!-- Hybrid Questions-->
 
-					<!-- Recommended numbers of elevators-->
-					<div >
-						<label for="elevatorsNb">Recommended number of elevators</label> 
-						<input class="form-control text-center" placeholder="0" id="elevatorsNb" value="" type="number" >
-					</div>
+		<!-- RETURN QUANTITY OF ELEVATORS NEEDED RESIDENTIAL-->						
+		<div id="DIV_10" style="display: none;">						
+			<label for="Elevator_Qty"> quantity of elevators you need</label> 
+			 <input class="form-control text-center" id="returned_qty_Eleva" type="number" disabled="" onchange="Price()">   
+			</div>
+
+		<!-- RETURN QUANTITY OF ELEVATORS NEEDED COMMERCIAL-->						
+			<div id="DIV_11" style="display: none;">						
+			 <label for="Elevator_Qty"> quantity of elevators you need</label> 
+			<input class="form-control text-center" id="returned_qty_ElevaB" type="number" disabled="" onchange="Price()">   
+			</div>
+			
+		<!--RETURN QUANTITY OF ELEVATORS NEEDED CORPORATE AND HYBRID-->					
+			<div id="DIV_12" style="display: none;">						
+				<label for="Elevator_Qty"> quantity of elevators you need</label> 
+			 <input class="form-control text-center" id="hybrid" type="number" disabled="" onchange="Price()">   
+			</div>
 			<!-- /Recommended numbers of elevators-->
 			<br/><br/>
 			<hr class="m-0" /><!-- 1px line separator -->
@@ -320,40 +279,45 @@
 				<label>Choose your service product</label>
 				<div class="container">
 					<label for="standard">Standard</label>
-					   <input type="radio" id="standard" name="quality" value="standard" onchange="qlyStandard()">
+					<input id="PriceUnitStandard" type="radio" name="services" value="standard" onchange="Price()">
 						</option><br>
 					<label for="premium">Premium</label>
-					   <input type="radio" id="premium" name="quality" value="premium" onchange="qlyPremium()">
+						<input id="PriceUnitPremium" type="radio" name="services" value="premium" onchange="Price()">
 						</option><br>
 					<label for="excelium">Excelium</label>
-					   <input type="radio" id="excelium" name="quality" value="excelium" onchange="qlyExcelium()">
+					<input id="PriceUnitExcelium" type="radio" name="services" value="other" onchange="Price()">
 						</option><br><br>
 				</div>
-				</form>
+			
 				<!-- Quality Selection -->
 				<br/><br/>
 				<hr class="m-0" /><!-- 1px line separator -->
 				<br/>
 			<!-- Estimated Prices-->
-			<form>
-				<div form-group mx-sm-3 mb-2 >
-					Estimated Cost Per Elevator: <input class="form-control text-center" id="elevatorCost" placeholder="$0.00" type="text" disabled><br>
-
-					Estimated Installation Costs: <input class="form-control text-center" id="installationCost" placeholder="$0.00" type="text" disabled><br>
-
-					Estimated Total Cost: <input class="form-control text-center" id="totalCost" placeholder="$0.00" type="text" disabled><br>
-				</div>
+			
+				
+					<div >
+						<label for="EstimatedPrices">Elevator Unit Price</label>
+						<input id="PriceUnit" type="text" disabled="" class="form-control">
+					</div>
+					<div ><label for="EstimatedPrices">Installation costs </label>
+						 <input id="InstallationCost" type="text" disabled="" class="form-control">
+					</div>
+					<div >
+						<label for="EstimatedPrices">Total project cost:</label>
+						 <input id="Total" type="text" disabled="" class="form-control">
+					</div>
+			</form>
 				<!-- /Estimated Prices-->
-			</Form>
-								</fieldset>
+			
+	
 
-								
-							</form>
+</Form>
 
 						</div>
 						<!-- /FORM -->
 	
-			
+						<br/><br/>			
 
 
 			<!-- FOOTER -->
@@ -366,14 +330,14 @@
 						<!-- col #1 -->
 						<div class="col-md-8">
 
-							<h3 class="letter-spacing-1">POURQUOI ROCKET ELEVATOR</h3>
+							<h3 class="letter-spacing-1">WHY ROCKET ELEVATOR</h3>
 
 							<!-- Small Description -->
 							<p>
-								Rocket Elevators est une compagnie de grande taille qui a pris la décision d’effectuer une
-								 transformation digitale pour survivre dans un monde dans lequel les innovations technologiques s’accélèrent.
+								Rocket Elevators is a large company that made the decision to carry out a
+								digital transformation to survive in a world in which technological innovations are accelerating.
 
-								 Nous offrons des services résidentiels de haute gamme ainsi que des services commerciaux et Corporatifs.
+								We offer high-end residential services as well as commercial and corporate services.
 							</p>
 							<h2>(581) 701-0303</h2>
 						</div>
@@ -381,17 +345,17 @@
 
 						<!-- col #2 -->
 						<div class="col-md-4">
-							<h3 class="letter-spacing-1">SOYER À JOUR</h3>
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
 
 							<!-- Newsletter Form -->
-							<p>Incrisvez-vous à notre infolettre pour être à l'aflux des dernières informations et des offres</p>
+							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
 
 							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
 									<span class="input-group-btn">
-										<button class="btn btn-default" type="submit">S'INSCRIRE</button>
+										<button class="btn btn-default" type="submit">Subscribe</button>
 									</span>
 								</div>
 							</form>
@@ -409,11 +373,11 @@
 				<div class="copyright">
 					<div class="container">
 						<ul class="float-right m-0 list-inline mobile-block">
-							<li><a href="#">Termes &amp; Conditions</a></li>
+							<li><a href="#">Terms &amp; Conditions</a></li>
 							<li>&bull;</li>
-							<li><a href="#">Confidentialité</a></li>
+							<li><a href="#">Privacy</a></li>
 						</ul>
-						&copy; Tous droit réservés, Compagnie ltée
+						&copy; 2020 | All Rights Reserved, Rocket Elevators LTD 
 					</div>
 				</div>
 
@@ -454,37 +418,11 @@
 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
 		<script src="assets/js/view/demo.revolution_slider.js"></script>
 
-		<!-- PAGELEVEL SCRIPTS -->
-		<script src="assets/js/contact.js"></script>
+		<!-- QUOTEFORM SCRIPTS -->
+		<script src="assets/js/GetQuote.js"></script>
 
-		<!-- 
-			GMAP.JS 
-			http://hpneo.github.io/gmaps/
-		-->
-		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
-		<script src="assets/plugins/gmaps.js"></script>
-		<script>
-
-			jQuery(document).ready(function(){
-
-				/**
-					@BASIC GOOGLE MAP
-				**/
-				var map2 = new GMaps({
-					div: '#map2',
-					lat: -12.043333,
-					lng: -77.028333,
-					scrollwheel: false
-				});
-
-				var marker = map2.addMarker({
-					lat: -12.043333,
-					lng: -77.028333,
-					title: 'Company, Inc.'
-				});
-
-			});
-
+		
+			
 		</script>
 	</body>
 </html>
