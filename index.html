@@ -29,7 +29,7 @@
 
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link href="assets/css/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 	</head>
 
 	
@@ -109,7 +109,7 @@
 											<li><a href="corporate.html">CORPORATE</a></li>
 										</ul>
 									</li>
-									<li><!-- WORK -->
+									<li><!-- PORTFOLIO -->
 										<a href="#portfolio">											
 											<strong>PORTFOLIO</strong>
 										</a>
@@ -464,7 +464,7 @@
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300"> Rocket Elevators has been in business since 1976</h2>
-						<a class="btn btn-red btn-lg " href="Quote.html">GET A QUOTE<i class="fa fa-angle-right"></i></a> 
+						<a class="btn btn-red btn-lg " href="Quote.html">GET A QUOTE <i class="fa fa-angle-right"></i></a> 
 						&nbsp; OU &nbsp; 
 						<a class="btn btn-primary btn-lg" href="#contact"> Contact us <i class=" fa fa-angle-right"></i></a>
 					</div>
@@ -1255,14 +1255,14 @@
 
 
 							
-							<form  method="post" enctype="multipart/form-data">
+							<form  onsubmit="confirmInput()" action="welcome-message.html">
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
 											<div class="col-md-4">
 												<label for="contact:name">Nom  *</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contactName">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:email"> Email *</label>
@@ -1317,7 +1317,7 @@
 
 								<div class="row">
 									<div class="col-md-12">
-										<button  type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+										<button id=""   type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
 									</div>
 								</div>
 							</form>
@@ -1423,9 +1423,9 @@
 				<div class="copyright">
 					<div class="container">
 						<ul class="float-right m-0 list-inline mobile-block">
-							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
 							<li>&bull;</li>
-							<li><a href="#">Privacy</a></li>
+							<li><a href="privacy.html">Privacy</a></li>
 						</ul>
 						&copy; 2020 | All Rights Reserved, Rocket Elevators LTD 
 					</div>

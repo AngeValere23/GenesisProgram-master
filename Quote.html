@@ -175,7 +175,7 @@
 
 											<div >
 												<label for="building_type">What's your building's type?</label>
-												<select   class="form-control" id="dropMenu" onchange="divStatus()">
+												<select   class="form-control" id="building_type" onchange="mySelection()">
 													<option >--- Select ---</option>
 													<option >residential</option>
 													<option >commercial</option>
@@ -191,18 +191,18 @@
 											<hr class="m-0" /><!-- 1px line separator -->
 
 									
-											<div id="DIV_1" style="display: none;">
+											<div id="ResidQs1" style="display: none;">
 												<label for="appartements">What is the number of appartement?</label> 					
 												<input class="form-control text-center" id="qty_Appart" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">   
 											</div>
 										   
 								
-											<div id="DIV_2" style="display: none;">
+											<div id="ResidQs2" style="display: none;">
 												<label for="floors">How many floors?</label> 
 												<input class="form-control text-center" id="qty_Level" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">
 											</div>
 													
-											<div id="DIV_3" style="display: none;">
+											<div id="ResidQs3" style="display: none;">
 												<label for="basements">How many basements?</label> 
 												<input class="form-control text-center" id="qty_Base" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  
 											</div>
@@ -213,17 +213,17 @@
 								<!-- Commercial Questions-->				
 								
 									
-									<div id="DIV_4" style="display: none;">	
+									<div id="CommQs1" style="display: none;">	
 										<label for="commercialBusiness">How many different business are hosted in your bulding?</label> 
 										<input class="form-control text-center" id="qty_Business" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  
 									</div>
 				
-									<div id="DIV_5" style="display: none;">	
+									<div id="CommQs2" style="display: none;">	
 										<label for="commercialParking">Number of available parking spaces?</label> 
 										<input class="form-control text-center" id="qty_Parking" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  
 									</div>
 				
-									<div id="DIV_6" style="display: none;">	
+									<div id="CommQs3" style="display: none;">	
 										<label for="commercialElevatordCages">Number of elevator cages?</label> 
 										<input class="form-control text-center" id="qty_Eleva" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">  	
 									</div>
@@ -235,17 +235,17 @@
 				
 					
 						
-						<div id="DIV_7" style="display: none;">
+						<div id="CorpHybQs1" style="display: none;">
 							<label for="corpCompanies">Number of separate tenant companies?</label>  
 							<input class="form-control text-center" id="qty_loan" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()"> 
 						</div>
 						
-						<div id="DIV_8" style="display: none;">
+						<div id="CorpHybQs2" style="display: none;">
 							<label for="corpOccupants">Maximum amount of occupants per floor?</label>  
 							<input class="form-control text-center" id="qty_Pop" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()"> 	
 						</div>
 						
-						<div  id="DIV_9" style="display: none;">
+						<div  id="CorpHybQs3" style="display: none;">
 							<label for="hybrid">Active/busy hours?</label> 
 							<input class="form-control text-center" id="qty_Hours" type="number" oninput="Call()" onkeyup="Call()" onchange="Price()">   		
 						</div>
@@ -254,19 +254,19 @@
 				<!-- /Corporate Questions--> <!-- Hybrid Questions-->
 
 		<!-- RETURN QUANTITY OF ELEVATORS NEEDED RESIDENTIAL-->						
-		<div id="DIV_10" style="display: none;">						
+		<div id="ResidElevatorQty" style="display: none;">						
 			<label for="Elevator_Qty"> quantity of elevators you need</label> 
 			 <input class="form-control text-center" id="returned_qty_Eleva" type="number" disabled="" onchange="Price()">   
 			</div>
 
 		<!-- RETURN QUANTITY OF ELEVATORS NEEDED COMMERCIAL-->						
-			<div id="DIV_11" style="display: none;">						
+			<div id="CommElevatorQty" style="display: none;">						
 			 <label for="Elevator_Qty"> quantity of elevators you need</label> 
 			<input class="form-control text-center" id="returned_qty_ElevaB" type="number" disabled="" onchange="Price()">   
 			</div>
 			
 		<!--RETURN QUANTITY OF ELEVATORS NEEDED CORPORATE AND HYBRID-->					
-			<div id="DIV_12" style="display: none;">						
+			<div id="Corp-HybElevatorQty" style="display: none;">						
 				<label for="Elevator_Qty"> quantity of elevators you need</label> 
 			 <input class="form-control text-center" id="hybrid" type="number" disabled="" onchange="Price()">   
 			</div>
@@ -373,9 +373,9 @@
 				<div class="copyright">
 					<div class="container">
 						<ul class="float-right m-0 list-inline mobile-block">
-							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li><a href="Terms-Conditions.html">Terms &amp; Conditions</a></li>
 							<li>&bull;</li>
-							<li><a href="#">Privacy</a></li>
+							<li><a href="privacy.html">Privacy</a></li>
 						</ul>
 						&copy; 2020 | All Rights Reserved, Rocket Elevators LTD 
 					</div>
